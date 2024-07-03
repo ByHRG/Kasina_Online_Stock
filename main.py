@@ -62,11 +62,11 @@ class KASINA:
         req = requests.get(url, headers=headers, data=payload)
 
         output = {
-            # "Name": req.json()["baseInfo"]["productNameEn"],
-            # "Model": req.json()["baseInfo"]["productManagementCd"],
-            # "Image": f'https:{req.json()["baseInfo"]["imageUrls"][0]}',
-            # "Price": req.json()["price"]["salePrice"],
-            # "Url": "https://www.kasina.co.kr/product-detail/"+ str(product_code),
+            "Name": req.json()["baseInfo"]["productNameEn"],
+            "Model": req.json()["baseInfo"]["productManagementCd"],
+            "Image": f'https:{req.json()["baseInfo"]["imageUrls"][0]}',
+            "Price": req.json()["price"]["salePrice"],
+            "Url": "https://www.kasina.co.kr/product-detail/"+ str(product_code),
             "Stock": {},
         }
         url = f"https://shop-api.e-ncp.com/products/{product_code}/options?useCache=true"
